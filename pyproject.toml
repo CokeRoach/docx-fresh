@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "docx-fresh"
+dynamic = ["version"]
+description = "Give python-docx documents fresh metadata instead of the default template's 2013 'python-docx / Macintosh Word' values."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "CokeRoach" }]
+requires-python = ">=3.9"
+dependencies = ["python-docx>=1.0,<2", "lxml>=4.9"]
+keywords = ["docx", "python-docx", "word", "metadata", "document properties"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Office/Business :: Office Suites",
+  "Topic :: Text Processing",
+]
+
+[project.urls]
+Homepage = "https://github.com/CokeRoach/docx-fresh"
+Issues = "https://github.com/CokeRoach/docx-fresh/issues"
+
+[project.scripts]
+docx-fresh = "docx_fresh.__main__:main"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.hatch.version]
+path = "src/docx_fresh/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/docx_fresh"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
