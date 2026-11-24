@@ -10,7 +10,7 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "CokeRoach" }]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = ["python-docx>=1.0,<2", "lxml>=4.9"]
 keywords = ["docx", "python-docx", "word", "metadata", "document properties"]
 classifiers = [
